@@ -44,14 +44,15 @@ export default function OptionGrid() {
             key={option.id}
             onClick={() => router.push(option.path)}
             className={`
-              bg-white p-6 rounded-lg shadow-lg hover:shadow-xl 
+              bg-white/10 backdrop-blur-sm p-6 rounded-lg 
+              shadow-lg hover:shadow-xl hover:bg-white/20
               transition-all duration-300 hover:-translate-y-1 
-              text-center border border-gray-100
+              text-center border border-white/20
               ${option.className}
             `}
           >
-            <h3 className="text-xl font-bold mb-2 text-gray-800">{option.title}</h3>
-            <p className="text-gray-600">{option.description}</p>
+            <h3 className="text-xl font-bold mb-2 text-white">{option.title}</h3>
+            <p className="text-gray-300">{option.description}</p>
           </button>
         ))}
       </div>

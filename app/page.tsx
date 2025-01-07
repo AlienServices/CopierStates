@@ -3,7 +3,7 @@ import OptionGrid from '@/components/OptionGrid'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-[#1a2b4b]">
       <Navbar />
       
       <div className="relative pt-20">
