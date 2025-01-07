@@ -32,18 +32,18 @@ export default function Navbar() {
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">
               Home
             </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
               About Us
             </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
               Contact
             </Link>
             <Link 
               href="/company-info" 
-              className="bg-white/10 text-white px-4 py-2 rounded-md hover:bg-white/20 transition-colors"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
             >
               Company Information
             </Link>
