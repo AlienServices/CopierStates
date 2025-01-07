@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="font-bold text-xl text-blue-600">
-            PrinterGuide
+            CopiersUtah
           </Link>
 
           {/* Mobile menu button */}
