@@ -1,6 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import ColorLargeModal from './ColorLargeModal'
 
 const options = [
   {
@@ -35,27 +37,43 @@ const options = [
 
 export default function OptionGrid() {
   const router = useRouter()
+  const [isColorLargeOpen, setIsColorLargeOpen] = useState(false)
+
+  const handleOptionClick = (optionId: string) => {
+    if (optionId === 'color-11x17') {
+      setIsColorLargeOpen(true)
+    } else {
+      router.push(`/options/${optionId}`)
+    }
+  }
 
   return (
-    <div className="relative -mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-8">
-        {options.map((option) => (
-          <button
-            key={option.id}
-            onClick={() => router.push(option.path)}
-            className={`
-              bg-white/10 backdrop-blur-sm p-6 rounded-lg 
-              shadow-lg hover:shadow-xl hover:bg-white/20
-              transition-all duration-300 hover:-translate-y-1 
-              text-center border border-white/20
-              ${option.className}
-            `}
-          >
-            <h3 className="text-xl font-bold mb-2 text-white">{option.title}</h3>
-            <p className="text-gray-300">{option.description}</p>
-          </button>
-        ))}
+    <>
+      <div className="relative -mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-8">
+          {options.map((option) => (
+            <button
+              key={option.id}
+              onClick={() => handleOptionClick(option.id)}
+              className={`
+                bg-white/10 backdrop-blur-sm p-6 rounded-lg 
+                shadow-lg hover:shadow-xl hover:bg-white/20
+                transition-all duration-300 hover:-translate-y-1 
+                text-center border border-white/20
+                ${option.className}
+              `}
+            >
+              <h3 className="text-xl font-bold mb-2 text-white">{option.title}</h3>
+              <p className="text-gray-300">{option.description}</p>
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
+
+      <ColorLargeModal 
+        isOpen={isColorLargeOpen} 
+        onClose={() => setIsColorLargeOpen(false)} 
+      />
+    </>
   )
 } 
