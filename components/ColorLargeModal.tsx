@@ -12,6 +12,7 @@ export default function ColorLargeModal({ isOpen, onClose }: Props) {
     <div className="fixed inset-0 bg-[#1a2b4b]/90 z-50 overflow-y-auto">
       {/* Close button */}
       <button 
+        type="button"
         onClick={onClose}
         className="absolute top-4 right-4 text-white hover:text-gray-300 p-2"
         aria-label="Close modal"
@@ -60,6 +61,7 @@ export default function ColorLargeModal({ isOpen, onClose }: Props) {
 
               <div className="pt-6">
                 <button 
+                  type="button"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
                   onClick={() => {/* Add contact/quote functionality */}}
                 >
