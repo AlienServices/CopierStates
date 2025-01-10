@@ -50,7 +50,7 @@ export default function OptionGrid() {
   return (
     <>
       <div className="relative -mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 px-8 lg:px-16">
           {options.map((option) => (
             <button
               key={option.id}
