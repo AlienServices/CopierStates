@@ -14,10 +14,7 @@ export default function Home() {
               autoPlay
               loop
               muted
-              className="h-auto w-auto max-h-[500px] max-w-[800px] object-contain"
-              style={{
-                filter: 'brightness(1.2) contrast(1.1)' // Increased brightness and contrast
-              }}
+              className="h-auto w-auto max-h-[500px] max-w-[800px] object-contain video-enhanced"
             >
               <source src="/Copiers-States-Intro-Script-Video.mp4" type="video/mp4" />
               Your browser does not support the video tag.

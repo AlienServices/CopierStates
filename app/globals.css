@@ -19,3 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.video-enhanced {
+  filter: brightness(1.2) contrast(1.1);
+}
