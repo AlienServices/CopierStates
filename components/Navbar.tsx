@@ -7,11 +7,10 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full bg-white shadow-md z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="font-bold text-xl text-blue-600">
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-content">
+          <Link href="/" className="navbar-logo">
             CopiersUtah
           </Link>
 
@@ -32,13 +31,13 @@ export default function Navbar() {
 
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/" className="navbar-link">
               Home
             </Link>
-            <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/about" className="navbar-link">
               About Us
             </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link href="/contact" className="navbar-link">
               Contact
             </Link>
             <Link 

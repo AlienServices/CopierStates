@@ -2,6 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Layout */
+.main-container {
+  @apply min-h-screen bg-[#1a2b4b];
+}
+
+/* Navbar Styles */
+.navbar {
+  @apply fixed top-0 w-full bg-white shadow-md z-50;
+}
+
+.navbar-container {
+  @apply container mx-auto px-4;
+}
+
+.navbar-content {
+  @apply flex justify-between items-center h-16;
+}
+
+.navbar-logo {
+  @apply font-bold text-xl text-blue-600;
+}
+
+.navbar-menu {
+  @apply hidden md:flex space-x-8;
+}
+
+.navbar-link {
+  @apply text-gray-600 hover:text-blue-600 transition-colors;
+}
+
+/* Video Section */
+.video-container {
+  @apply relative h-[70vh] flex items-center justify-center;
+}
+
+.video-player {
+  @apply h-auto w-auto max-h-[500px] max-w-[800px] object-contain;
+}
+
+/* Option Grid */
+.option-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16 px-8 lg:px-16;
+}
+
+.option-card {
+  @apply bg-white/10 backdrop-blur-sm p-6 rounded-lg 
+         shadow-lg hover:shadow-xl hover:bg-white/20
+         transition-all duration-300 hover:-translate-y-1 
+         text-center border border-white/20;
+}
+
+.option-title {
+  @apply text-xl font-bold mb-2 text-white;
+}
+
+.option-description {
+  @apply text-gray-300;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
