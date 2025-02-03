@@ -2,7 +2,10 @@
 
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
-import ColorLargeModal from '@/components/ColorLargeModal'
+import Color11x17Modal from '@/components/modals/Color11x17Modal'
+import ColorStandardModal from '@/components/modals/ColorStandardModal'
+import BW11x17Modal from '@/components/modals/BW11x17Modal'
+import BWStandardModal from '@/components/modals/BWStandardModal'
 
 const options = [
   {
@@ -28,13 +31,26 @@ const options = [
 ]
 
 export default function Home() {
-  const [isColorLargeOpen, setIsColorLargeOpen] = useState(false)
+  const [isColor11x17Open, setIsColor11x17Open] = useState(false)
+  const [isColorStandardOpen, setIsColorStandardOpen] = useState(false)
+  const [isBW11x17Open, setIsBW11x17Open] = useState(false)
+  const [isBWStandardOpen, setIsBWStandardOpen] = useState(false)
 
   const handleOptionClick = (optionId: string) => {
-    if (optionId === 'color-11x17') {
-      setIsColorLargeOpen(true)
+    switch(optionId) {
+      case 'color-11x17':
+        setIsColor11x17Open(true)
+        break
+      case 'color-standard':
+        setIsColorStandardOpen(true)
+        break
+      case 'bw-11x17':
+        setIsBW11x17Open(true)
+        break
+      case 'bw-standard':
+        setIsBWStandardOpen(true)
+        break
     }
-    // Add other modal handlers here as needed
   }
 
   return (
@@ -71,9 +87,21 @@ export default function Home() {
         </div>
       </div>
 
-      <ColorLargeModal 
-        isOpen={isColorLargeOpen} 
-        onClose={() => setIsColorLargeOpen(false)} 
+      <Color11x17Modal 
+        isOpen={isColor11x17Open} 
+        onClose={() => setIsColor11x17Open(false)} 
+      />
+      <ColorStandardModal 
+        isOpen={isColorStandardOpen} 
+        onClose={() => setIsColorStandardOpen(false)} 
+      />
+      <BW11x17Modal 
+        isOpen={isBW11x17Open} 
+        onClose={() => setIsBW11x17Open(false)} 
+      />
+      <BWStandardModal 
+        isOpen={isBWStandardOpen} 
+        onClose={() => setIsBWStandardOpen(false)} 
       />
     </main>
   )
