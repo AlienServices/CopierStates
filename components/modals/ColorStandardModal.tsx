@@ -42,6 +42,15 @@ export default function ColorStandardModal({ isOpen, onClose }: Props) {
               </ul>
 
               {/* Button section */}
+              <div className={modalStyles.buttonContainer}>
+                <button 
+                  type="button"
+                  className={modalStyles.button}
+                  onClick={() => {/* Add contact/quote functionality */}}
+                >
+                  Request a Quote
+                </button>
+              </div>
             </div>
           </div>
         </div>
