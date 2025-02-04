@@ -9,9 +9,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="navbar-logo">
+        <div className="flex items-center h-16">
+          {/* Logo - with less margin */}
+          <Link href="/" className="navbar-logo mr-16">
             CopiersUtah
           </Link>
 
@@ -30,10 +30,10 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Navigation Links and Phone - using justify-between */}
-          <div className="hidden md:flex items-center">
-            {/* Nav Links with specific spacing */}
-            <div className="flex space-x-8 mr-8"> {/* Added mr-8 for space before phone */}
+          {/* Navigation Links and Phone - centered spacing */}
+          <div className="hidden md:flex items-center justify-between flex-1">
+            {/* Nav Links with adjusted spacing */}
+            <div className="flex space-x-12"> {/* Increased from space-x-8 */}
               <Link href="/" className="navbar-link">
                 Home
               </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
 
             {/* Phone Number */}
             <a href="tel:8012610510" className="text-gray-600 hover:text-blue-600">
-            (801) 261-0510
+            Reach Us At (801) 261-0510
             </a>
           </div>
         </div>
