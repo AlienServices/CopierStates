@@ -1,7 +1,10 @@
+import Navbar from '@/components/Navbar'
+
 export default function About() {
   return (
-    <main className="min-h-screen bg-[#1a2b4b] pt-20">
-      <div className="container mx-auto px-4 py-8">
+    <main className="min-h-screen bg-[#1a2b4b]">
+      <Navbar />
+      <div className="container mx-auto px-4 py-8 pt-20">
         <h1 className="text-4xl font-bold text-white mb-8">About CopiersUtah</h1>
         
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">

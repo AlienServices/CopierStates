@@ -1,7 +1,10 @@
+import Navbar from '@/components/Navbar'
+
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-[#1a2b4b] pt-20">
-      <div className="container mx-auto px-4 py-8">
+    <main className="min-h-screen bg-[#1a2b4b]">
+      <Navbar />
+      <div className="container mx-auto px-4 py-8 pt-20">
         <h1 className="text-4xl font-bold text-white mb-8">Contact Us</h1>
         
         <div className="grid md:grid-cols-2 gap-8">
