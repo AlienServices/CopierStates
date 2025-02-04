@@ -9,7 +9,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-content">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <Link href="/" className="navbar-logo">
             CopiersUtah
           </Link>
@@ -29,23 +30,25 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Desktop menu */}
-          <div className="hidden md:flex space-x-8">
-            <Link href="/" className="navbar-link">
-              Home
-            </Link>
-            <Link href="/about" className="navbar-link">
-              About Us
-            </Link>
-            <Link href="/contact" className="navbar-link">
-              Contact
-            </Link>
-            <Link 
-              href="/company-info" 
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              Company Information
-            </Link>
+          {/* Navigation Links and Phone - using justify-between */}
+          <div className="hidden md:flex items-center">
+            {/* Nav Links with specific spacing */}
+            <div className="flex space-x-8 mr-8"> {/* Added mr-8 for space before phone */}
+              <Link href="/" className="navbar-link">
+                Home
+              </Link>
+              <Link href="/about" className="navbar-link">
+                About Us
+              </Link>
+              <Link href="/contact" className="navbar-link">
+                Contact
+              </Link>
+            </div>
+
+            {/* Phone Number */}
+            <a href="tel:8012610510" className="text-gray-600 hover:text-blue-600">
+            (801) 261-0510
+            </a>
           </div>
         </div>
 
