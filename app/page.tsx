@@ -35,8 +35,10 @@ export default function Home() {
   const [isColorStandardOpen, setIsColorStandardOpen] = useState(false)
   const [isBW11x17Open, setIsBW11x17Open] = useState(false)
   const [isBWStandardOpen, setIsBWStandardOpen] = useState(false)
+  const [isIntroVideoVisible, setIsIntroVideoVisible] = useState(true)
 
   const handleOptionClick = (optionId: string) => {
+    setIsIntroVideoVisible(false)
     switch(optionId) {
       case 'color-11x17':
         setIsColor11x17Open(true)
@@ -53,25 +55,34 @@ export default function Home() {
     }
   }
 
+  const handleModalClose = () => {
+    setIsColor11x17Open(false)
+    setIsColorStandardOpen(false)
+    setIsBW11x17Open(false)
+    setIsBWStandardOpen(false)
+    setIsIntroVideoVisible(true)
+  }
+
   return (
     <main className="main-container">
       <Navbar />
       
       <div className="relative pt-20">
         <div className="container mx-auto px-4">
-          <div className="video-container">
-            <video
-              autoPlay
-              loop
-              muted
-              className="video-player"
-            >
-              <source src="/Copiers-States-Intro-Script-Video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+          {isIntroVideoVisible && (
+            <div className="video-container">
+              <video
+                autoPlay
+                loop
+                muted
+                className="video-player intro-video"
+              >
+                <source src="/Copiers-States-Intro-Script-Video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          )}
 
-          {/* Only one option grid here */}
           <div className="option-grid">
             {options.map((option) => (
               <button
@@ -89,19 +100,23 @@ export default function Home() {
 
       <Color11x17Modal 
         isOpen={isColor11x17Open} 
-        onClose={() => setIsColor11x17Open(false)} 
+        onClose={handleModalClose}
+        videoSrc="/path-to-color-11x17-video.mp4"
       />
       <ColorStandardModal 
         isOpen={isColorStandardOpen} 
-        onClose={() => setIsColorStandardOpen(false)} 
+        onClose={handleModalClose}
+        videoSrc="/path-to-color-standard-video.mp4"
       />
       <BW11x17Modal 
         isOpen={isBW11x17Open} 
-        onClose={() => setIsBW11x17Open(false)} 
+        onClose={handleModalClose}
+        // videoSrc="/path-to-bw-11x17-video.mp4"
       />
       <BWStandardModal 
         isOpen={isBWStandardOpen} 
-        onClose={() => setIsBWStandardOpen(false)} 
+        onClose={handleModalClose}
+        // videoSrc="/path-to-bw-standard-video.mp4"
       />
     </main>
   )
