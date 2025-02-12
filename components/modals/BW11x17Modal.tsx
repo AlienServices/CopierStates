@@ -28,7 +28,12 @@ export default function BW11x17Modal({ isOpen, onClose }: Props) {
             Black & White 11x17 Printers
           </h2>
           
-          {/* Add your modal content here */}
+          <div className="placeholder-content mb-6">
+            <div className="bg-gray-200 w-full h-64 flex items-center justify-center rounded-lg">
+              <p className="text-gray-600">Video content coming soon</p>
+            </div>
+          </div>
+          
           <div className={modalStyles.card}>
             <div className={modalStyles.textContainer}>
               <p className={modalStyles.description}>
@@ -36,7 +41,7 @@ export default function BW11x17Modal({ isOpen, onClose }: Props) {
               </p>
 
               <ul className={modalStyles.list}>
-                <li>Full color printing up to 11x17 (and 12x18) size</li>
+                <li>Full black & white printing up to 11x17 (and 12x18) size</li>
                 <li>High-quality resolution for professional documents</li>
                 <li>Fast printing speeds for improved productivity</li>
                 <li>Advanced finishing options available</li>
@@ -56,5 +61,5 @@ export default function BW11x17Modal({ isOpen, onClose }: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }

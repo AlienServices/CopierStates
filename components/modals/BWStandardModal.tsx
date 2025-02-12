@@ -28,18 +28,23 @@ export default function BWStandardModal({ isOpen, onClose }: Props) {
             Black & White Standard Printers
           </h2>
           
-          {/* Add your modal content here */}
+          <div className="placeholder-content mb-6">
+            <div className="bg-gray-200 w-full h-64 flex items-center justify-center rounded-lg">
+              <p className="text-gray-600">Video content coming soon</p>
+            </div>
+          </div>
+          
           <div className={modalStyles.card}>
             <div className={modalStyles.textContainer}>
               <p className={modalStyles.description}>
-                Our black and white printers offer:
+                Our standard black and white printers offer:
               </p>
 
               <ul className={modalStyles.list}>
-                <li>Full color printing up to 11x17 (and 12x18) size</li>
+                <li>Black & white printing up to letter/legal size</li>
                 <li>High-quality resolution for professional documents</li>
-                <li>Fast printing speeds for improved productivity</li>
-                <li>Advanced finishing options available</li>
+                <li>Fast printing speeds</li>
+                <li>Cost-effective printing solution</li>
               </ul>
 
               <div className={modalStyles.buttonContainer}>

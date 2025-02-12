@@ -1,32 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { modalStyles } from './shared/ModalStyles'
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  videoSrc: string;
 }
 
-export default function ColorStandardModal({ isOpen, onClose, videoSrc }: Props) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (isOpen && video) {
-      video.play().catch(() => {
-        // Handle any play() errors silently
-      })
-    }
-    return () => {
-      if (video) {
-        video.pause()
-        video.currentTime = 0
-      }
-    }
-  }, [isOpen])
-
+export default function ColorStandardModal({ isOpen, onClose }: Props) {
   if (!isOpen) return null;
 
   return (
@@ -47,14 +28,10 @@ export default function ColorStandardModal({ isOpen, onClose, videoSrc }: Props)
             Color Standard Printers
           </h2>
           
-          <div className="video-container mb-6">
-            <video
-              ref={videoRef}
-              className="modal-video w-full"
-            >
-              <source src={videoSrc} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="placeholder-content mb-6">
+            <div className="bg-gray-200 w-full h-64 flex items-center justify-center rounded-lg">
+              <p className="text-gray-600">Video content coming soon</p>
+            </div>
           </div>
           
           <div className={modalStyles.card}>
@@ -70,7 +47,6 @@ export default function ColorStandardModal({ isOpen, onClose, videoSrc }: Props)
                 <li>Cost-effective color printing solution</li>
               </ul>
 
-              {/* Button section */}
               <div className={modalStyles.buttonContainer}>
                 <button 
                   type="button"

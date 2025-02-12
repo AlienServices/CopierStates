@@ -75,6 +75,7 @@ export default function Home() {
                 autoPlay
                 loop
                 muted
+                playsInline
                 className="video-player intro-video"
               >
                 <source src="/Copiers-States-Intro-Script-Video.mp4" type="video/mp4" />
@@ -101,22 +102,18 @@ export default function Home() {
       <Color11x17Modal 
         isOpen={isColor11x17Open} 
         onClose={handleModalClose}
-        videoSrc="/path-to-color-11x17-video.mp4"
       />
       <ColorStandardModal 
         isOpen={isColorStandardOpen} 
         onClose={handleModalClose}
-        videoSrc="/path-to-color-standard-video.mp4"
       />
       <BW11x17Modal 
         isOpen={isBW11x17Open} 
         onClose={handleModalClose}
-        // videoSrc="/path-to-bw-11x17-video.mp4"
       />
       <BWStandardModal 
         isOpen={isBWStandardOpen} 
         onClose={handleModalClose}
-        // videoSrc="/path-to-bw-standard-video.mp4"
       />
     </main>
   )

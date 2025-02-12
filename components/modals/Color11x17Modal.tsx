@@ -1,23 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { modalStyles } from './shared/ModalStyles'
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  videoSrc: string;
 }
 
-export default function Color11x17Modal({ isOpen, onClose, videoSrc }: Props) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    if (isOpen && videoRef.current) {
-      videoRef.current.play()
-    }
-  }, [isOpen])
-
+export default function Color11x17Modal({ isOpen, onClose }: Props) {
   if (!isOpen) return null;
 
   return (
@@ -38,15 +28,10 @@ export default function Color11x17Modal({ isOpen, onClose, videoSrc }: Props) {
             Color & 11x17 Printers
           </h2>
           
-          <div className="video-container mb-6">
-            <video
-              ref={videoRef}
-              autoPlay
-              className="modal-video w-full"
-            >
-              <source src={videoSrc} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="placeholder-content mb-6">
+            <div className="bg-gray-200 w-full h-64 flex items-center justify-center rounded-lg">
+              <p className="text-gray-600">Video content coming soon</p>
+            </div>
           </div>
           
           <div className={modalStyles.card}>
